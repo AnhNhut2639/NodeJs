@@ -1,5 +1,8 @@
-h1 hello
-h2 What the City in my Country you like ???
+h1 city
+h2 What's the City in my Country you like ???
+form(action="/city/search", method="GET")
+    input(type="text", name="q")
+    button Search
 ul
-    each tp in city
+    each tp in city 
         li= tp.name

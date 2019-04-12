@@ -5,4 +5,7 @@ form(action="/city/search", method="GET")
     button Search
 ul
     each tp in city 
-        li= tp.name
+        li
+            span= tp.name
+            span &nbsp;
+            a(href='/testnodemon/' + tp.id) Link

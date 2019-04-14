@@ -1,11 +1,19 @@
-h1 city
-h2 What's the City in my Country you like ???
-form(action="/city/search", method="GET")
-    input(type="text", name="q")
-    button Search
-ul
-    each tp in city 
-        li
-            span= tp.name
-            span &nbsp;
-            a(href='/testnodemon/' + tp.id) Link
+extends ../layouts/common
+block content
+    h1 city
+     h2 What's the City in my Country you like ???
+    form(action="/city/search", method="GET" class="d-flex")
+        input(type="text", name="q", class="form-control")
+        button(class ="btn btn-success") Search
+    table.table
+        tr
+            th City
+            th Contact 
+            th Action
+        each tp in city 
+            tr
+                td= tp.name
+                td=tp.phone
+
+                td
+                    a(href='/testnodemon/' + tp.id) Link

@@ -1,7 +1,15 @@
-h1 Add city you want to come in Viet Nam
+extends ../layouts/common
+block content
+    h1 Add city you want to come in Viet Nam
 
-form(action="/city/create",method="POST")
-    label City
-    input(type="text",name ="name")
+    form(action="/city/create",method="POST")
+        .form-group
+        label(for="name") City
+        input#name.form-control(type="text",name ="name")
 
-    button Add
+        .form-group
+        label(for="phone") Contact
+        input#phone.form-control(type="text",name ="phone")
+
+
+        button.btn.btn-info Add

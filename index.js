@@ -20,7 +20,8 @@ var db = require('./db');
 // require router vua tao
 
 
-
+// public static file
+app.use(express.static('public'));  
 
 
 app.get('/',function(req , res){

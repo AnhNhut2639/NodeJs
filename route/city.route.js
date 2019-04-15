@@ -8,9 +8,11 @@ var db = require('../db');
 
 var router = express.Router();
 var cityController = require('../controller/City.controller');
+var validate = require('../validate/validate.city');
+
 
 router.get('/create',cityController.create);
-router.post('/create',cityController.post);
+router.post('/create',validate.post,cityController.post);
 router.get('/search',cityController.search);
 
 

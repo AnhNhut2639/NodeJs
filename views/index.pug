@@ -1,8 +1,9 @@
 extends ./layouts/common
 block content
-    h1 Hello i'm  #{name}  Delima
-    a(href= "/testnodemon") Search 
-    br
-    a(href="/city/create") ADD
+ h1 Hello i'm  #{name}  Delima
+    div(class="d-flex") 
+        a(href= "/testnodemon" class="alert alert-primary mr-2 ") Search 
+        br
+        a(href="/city/create", class="alert alert-danger") ADD
 
     img(src="/images/download.png", alt="deo co anh ! m sai r ")

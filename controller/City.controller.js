@@ -23,6 +23,23 @@ module.exports.create = function(req,res){
 module.exports.post = function(req,res){
 
     req.body.id = shortid.generate(); //tao id ngau nhien bang shortid
+    var erorrs = [];
+    if(!req.body.name){
+        erorrs.push('Name is required ! ');
+    }
+    if(!req.body.phone){
+        erorrs.push('Phone is required ! ');
+    }
+
+    if(erorrs.length)
+    {
+        res.render('city/create.pug',{
+            erorrs: erorrs,
+            values: req.body
+        });
+        return;
+    }
+
     db.get('citys').push(req.body).write() // lay du lieu tu database va push 
     res.redirect('/testnodemon');
 }

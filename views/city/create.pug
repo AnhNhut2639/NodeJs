@@ -1,15 +1,18 @@
 extends ../layouts/common
 block content
     h1 Add city you want to come in Viet Nam
+    if erorrs 
+        each erorr in erorrs 
+            .alert.alert-warning= erorr 
 
     form(action="/city/create",method="POST")
         .form-group
         label(for="name") City
-        input#name.form-control(type="text",name ="name")
+        input#name.form-control(type="text",name ="name", value=values ? values.name : "")
 
         .form-group
         label(for="phone") Contact
-        input#phone.form-control(type="text",name ="phone")
+        input#phone.form-control(type="text",name ="phone",value=values ? values.phone : "")
 
 
         button.btn.btn-info Add

@@ -1,5 +1,5 @@
 var db = require('../db');
-
+var md5 =require('md5');
 module.exports.login = function(req,res){
     res.render('auth/login');
 };
@@ -19,7 +19,9 @@ module.exports.postLogin = function(req,res){
         });
         return;
     }
-    if(user.pass !== pass ){
+    var hashpass =md5(pass);
+
+    if(user.pass !== hashpass ){
         res.render('auth/login',{
             erorrs:[
                 'sai pass'

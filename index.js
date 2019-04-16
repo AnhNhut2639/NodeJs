@@ -1,9 +1,13 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var routes = require('./route/city.route'); 
 
+var middle = require('./middleware/auth.middle');
+
 var routenodemon = require('./route/testnodemon.route'); 
+var log = require('./route/auth.route');
 var port = 3000
 app.set('view engine', 'pug');
 app.set('views','./views');
@@ -11,6 +15,8 @@ app.set('views','./views');
 //dody parser
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
+
+app.use(cookieParser());
 //
 //lowdb
 var db = require('./db');
@@ -32,7 +38,9 @@ app.get('/',function(req , res){
 });
 
 // su dung call back router vua tao 
-app.use('/city',routes);
-app.use('/testnodemon',routenodemon);
+app.use('/city',middle.requireAuth,routes);
+app.use('/',log);
+app.use('/testnodemon',middle.requireAuth,routenodemon);
 
 app.listen(port, () => console.log(`Deployed ${port}!`))
+

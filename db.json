@@ -19,7 +19,9 @@
     {
       "name": "Ha Noi",
       "phone": "0353948141",
-      "id": "ZGOCLPlN8"
+      "id": "ZGOCLPlN8",
+      "email": "zoro92211@gmail.com",
+      "pass": "123456"
     }
   ]
 }

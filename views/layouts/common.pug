@@ -15,5 +15,7 @@ html
                         a.nav-link(href='/city/create') Create
                     li.nav-item
                         a.nav-link(href='/testnodemon') Search
+            if(userN)
+                p= userN.name
     .container.pt-5
         block content

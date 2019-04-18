@@ -16,7 +16,9 @@ app.set('views','./views');
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.use(cookieParser());
+//app.use(cookieParser());
+
+app.use(cookieParser('asdasasds'));
 //
 //lowdb
 var db = require('./db');

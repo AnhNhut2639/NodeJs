@@ -30,6 +30,8 @@ module.exports.postLogin = function(req,res){
         });
         return;
     }
-    res.cookie('ID',user.id);
+    res.cookie('ID',user.id,{
+        signed: true
+    });
     res.redirect('/testnodemon');
 };

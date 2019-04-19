@@ -1,3 +1,5 @@
+require('dotenv').config();
+//console.log(process.env.SESSION_SECRET);
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -16,9 +18,9 @@ app.set('views','./views');
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-//app.use(cookieParser());
+app.use(cookieParser('dfadfasd'));
 
-app.use(cookieParser('asdasasds'));
+//app.use(cookieParser(process.env.SESSION_SECRET));
 //
 //lowdb
 var db = require('./db');

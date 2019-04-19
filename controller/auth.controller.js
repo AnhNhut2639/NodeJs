@@ -21,7 +21,7 @@ module.exports.postLogin = function(req,res){
     }
     var hashpass =md5(pass);
 
-    if(user.pass !== hashpass ){
+    if(user.pass !== hashpass){
         res.render('auth/login',{
             erorrs:[
                 'sai pass'

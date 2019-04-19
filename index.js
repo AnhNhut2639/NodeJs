@@ -9,6 +9,9 @@ var routes = require('./route/city.route');
 var middle = require('./middleware/auth.middle');
 
 var routenodemon = require('./route/testnodemon.route'); 
+//product route
+
+var productRoute = require('./route/product.route');
 var log = require('./route/auth.route');
 var port = 3000
 app.set('view engine', 'pug');
@@ -43,8 +46,11 @@ app.get('/',function(req , res){
 
 // su dung call back router vua tao 
 app.use('/city',middle.requireAuth,routes);
+//app.use('/city',routes);
 app.use('/',log);
 app.use('/testnodemon',middle.requireAuth,routenodemon);
-
+//app.use('/testnodemon',routenodemon);
+//trang product
+app.use('/product',productRoute);
 app.listen(port, () => console.log(`Deployed ${port}!`))
 

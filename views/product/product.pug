@@ -1,0 +1,11 @@
+extends ../layouts/common
+block content
+    h1.font-weight-light HEllo i'm productor
+        form.form-inline
+            .form-group.mb-2
+                label.sr-only(for='staticEmail2') Email
+                input#staticEmail2.form-control-plaintext(type='text', readonly='')
+            .form-group.mx-sm-3.mb-2
+                label.sr-only(for='inputPassword2') Password
+                input#inputPassword2.form-control(type='password')
+            button.btn.btn-primary.mb-2(type='submit') Search

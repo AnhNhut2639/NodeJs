@@ -5,7 +5,7 @@ block content
         each erorr in erorrs 
             .alert.alert-warning= erorr 
 
-    form(action="/city/create",method="POST")
+    form(action="/city/create",method="POST", enctype="multipart/form-data")
         .form-group
         label(for="name") City
         input#name.form-control(type="text",name ="name", value=values ? values.name : "")
@@ -13,6 +13,11 @@ block content
         .form-group
         label(for="phone") Contact
         input#phone.form-control(type="text",name ="phone",value=values ? values.phone : "")
+
+        .form-group
+         label(for="avatar") Avatar
+         input#avatar.form-control-file(name="avatar",type="file")
+
 
 
         button.btn.btn-info.mt-2 Add

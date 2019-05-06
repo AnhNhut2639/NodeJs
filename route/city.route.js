@@ -1,6 +1,7 @@
 var express = require('express');
 //var app = express()
-
+var multer  = require('multer');
+var upload = multer({ dest: './public/uploads/' })
 
 var db = require('../db');
 //shortid
@@ -12,8 +13,8 @@ var validate = require('../validate/validate.city');
 
 
 router.get('/create',cityController.create);
-router.post('/create',validate.post,cityController.post);
+router.post('/create',upload.single('avatar'),validate.post,cityController.post);
 router.get('/search',cityController.search);
 
 
-module.exports = router;
+module.exports = router; 

@@ -5,7 +5,7 @@ module.exports.post = function(req,res,next)
         erorrs.push('Name is required ! ');
     }
     if(!req.body.phone){
-        erorrs.push('Phone is required ! ');
+        erorrs.push('Contact is required ! ');
     }
 
     if(erorrs.length)

@@ -8,4 +8,18 @@ block content
             .form-group.mx-sm-3.mb-2
                 label.sr-only(for='inputPassword2') Password
                 input#inputPassword2.form-control(type='password')
-            button.btn.btn-primary.mb-2(type='submit') Search
+            button.btn.btn-primary.mb-2(type='submit') Search     
+    div(class="d-flex")    
+        each pro in product
+            .d-flex.container.h5   
+                .row.mr-5
+                    .mr-2.col-sm-3.m-4 
+                    .images(width='360px')
+                        img.rounded(src= pro.image)
+                        .info
+                        .name
+                            h2 IPhone Xs
+                        .someText.pt-4.pb-4
+                            p= pro.description
+                        .button
+                            button.btn.btn-primary(type='button') ADD to cart

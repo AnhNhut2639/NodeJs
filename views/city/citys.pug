@@ -7,11 +7,14 @@ block content
         button(class ="btn btn-success") Search
     table.table
         tr
+            th Avatar
             th City
             th Contact 
             th Action
         each tp in city 
             tr
+                td
+                    img(src= tp.avatar, width="32")
                 td= tp.name
                 td=tp.phone
 

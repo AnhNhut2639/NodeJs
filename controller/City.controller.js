@@ -23,6 +23,7 @@ module.exports.create = function(req,res){
 module.exports.post = function(req,res){
 
     req.body.id = shortid.generate(); //tao id ngau nhien bang shortid
+    req.body.avatar = req.file.path.split('/').slice(1).join('/');
     db.get('citys').push(req.body).write() // lay du lieu tu database va push 
     res.redirect('/testnodemon');
 }

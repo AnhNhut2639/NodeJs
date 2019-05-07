@@ -10,9 +10,11 @@ var middle = require('./middleware/auth.middle');
 
 var routenodemon = require('./route/testnodemon.route'); 
 //product route
+var sessionMiddleware = require('./middleware/session.middleware'); // tao session ID
 
 var productRoute = require('./route/product.route');
 var log = require('./route/auth.route');
+var cartRoute = require('./route/cart.route');
 var port = 3000
 app.set('view engine', 'pug');
 app.set('views','./views');
@@ -22,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(cookieParser('dfadfasd'));
+app.use(sessionMiddleware); // anh huong den tat ca duong dan duoc su dung
 
 //app.use(cookieParser(process.env.SESSION_SECRET));
 //
@@ -52,5 +55,7 @@ app.use('/testnodemon',middle.requireAuth,routenodemon);
 //app.use('/testnodemon',routenodemon);
 //trang product
 app.use('/product',productRoute);
+app.use('/cart',cartRoute);
 app.listen(port, () => console.log(`Deployed ${port}!`))
 
+//

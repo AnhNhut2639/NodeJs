@@ -381,5 +381,18 @@
       "image": "https://loremflickr.com/320/240",
       "description": "vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae"
     }
+  ],
+  "sessions": [
+    {
+      "id": "KPuNS9gCv"
+    },
+    {
+      "id": "Aa55U0y7M",
+      "cart": {
+        "1e89b3be-83e5-4949-a34e-51860cda4540": 3,
+        "f2098e91-6ea9-43b4-b207-7d06bc18defc": 1,
+        "989b5098-0624-4938-86c7-a44323144dd4": 1
+      }
+    }
   ]
 }

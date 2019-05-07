@@ -30,7 +30,7 @@ module.exports.postLogin = function(req,res){
         });
         return;
     }
-    res.cookie('ID',user.id,{
+    res.cookie('ID',user.id,{ //neu tai khoan dung thi tao tao ta 1 cookie tu chinh id cua tai khoan do
         signed: true
     });
     res.redirect('/testnodemon');

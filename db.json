@@ -5,7 +5,8 @@
       "phone": "0353948141",
       "id": "o4mRv10Kl",
       "email": "zoro92211@gmail.com",
-      "pass": "e10adc3949ba59abbe56e057f20f883e"
+      "pass": "e10adc3949ba59abbe56e057f20f883e",
+      "avatar": "uploads/3bad857e594a0ffddf12ffe89621af5f"
     },
     {
       "name": "Soc TRang",
@@ -393,6 +394,9 @@
         "f2098e91-6ea9-43b4-b207-7d06bc18defc": 1,
         "989b5098-0624-4938-86c7-a44323144dd4": 1
       }
+    },
+    {
+      "id": "LBcfVk-sr"
     }
   ]
 }

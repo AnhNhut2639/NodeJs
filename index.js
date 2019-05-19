@@ -5,7 +5,10 @@ var app = express();
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var routes = require('./route/city.route'); 
-
+var mongoose = require('mongoose'); // use mongoose db
+mongoose.connect(process.env.MONGO_URL);
+//mongoose.connect('mongodb://localhost/express-demo');
+//
 var middle = require('./middleware/auth.middle');
 
 var routenodemon = require('./route/testnodemon.route'); 

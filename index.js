@@ -18,6 +18,7 @@ var sessionMiddleware = require('./middleware/session.middleware'); // tao sessi
 var productRoute = require('./route/product.route');
 var log = require('./route/auth.route');
 var cartRoute = require('./route/cart.route');
+var apiProductRoute = require('./api/routes/product.route');
 var port = 3000
 app.set('view engine', 'pug');
 app.set('views','./views');
@@ -59,6 +60,7 @@ app.use('/testnodemon',middle.requireAuth,routenodemon);
 //trang product
 app.use('/product',productRoute);
 app.use('/cart',cartRoute);
+app.use('/api/product',apiProductRoute);
 app.listen(port, () => console.log(`Deployed ${port}!`))
 
 //

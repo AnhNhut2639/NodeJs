@@ -20,8 +20,8 @@ var log = require('./route/auth.route');
 var cartRoute = require('./route/cart.route');
 var apiProductRoute = require('./api/routes/product.route');
 var port = 3000
-app.set('view engine', 'pug');
-app.set('views','./views');
+app.set('view engine', 'pug');// sử dụng template pug
+app.set('views','./views'); // tạo thư mục views
 
 //dody parser
 app.use(bodyParser.json()); 
@@ -46,8 +46,8 @@ app.use(express.static('public'));
 
 app.get('/',function(req , res){
     //res.send('you right');
-    res.render('index',{
-        name: 'Anh Nhut',        
+    res.render('index',{ // render tham số thứ nhất là path (index.pug) 
+        name: 'Anh Nhut',        // name ở đây sẽ được truyền qua  index.pug
     }); // trong localhost:3000 render ra file index.pug
 });
 

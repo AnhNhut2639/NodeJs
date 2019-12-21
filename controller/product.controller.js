@@ -8,8 +8,8 @@ module.exports.indexProduct = function(req,res){
     //});
 
    Product.find().then(function(products){
-    res.render('product/product',{
-           product: products
+    res.render('product/product.pug',{
+           product: products // ảnh hưởng đến trang root ở product.route.js( dòng 6)
         });
    });
 };

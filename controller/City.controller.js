@@ -28,7 +28,7 @@ module.exports.post = function(req,res){
     res.redirect('/testnodemon');
 }
 
-module.exports.search = function(req,res){
+module.exports.search = function(req,res){ //action trong form
     //console.log(req.query); // khi nhap ?q=th 
    var q = req.query.q;
    var matchedcity= db.get('citys').value().filter(function(item){

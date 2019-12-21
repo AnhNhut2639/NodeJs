@@ -13,7 +13,7 @@ module.exports.requireAuth= function(req,res,next){
         return;
     }
 
-    res.locals.userN = user;
+    res.locals.userN = user; // truyền userN qua common để hiển thị tên ng đăng nhập sau khi đăng nhập thành công
 
     next();
 

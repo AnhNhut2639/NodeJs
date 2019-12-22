@@ -2,7 +2,7 @@
 var db = require('../db');
 
 module.exports.addToCart = function(req,res,next){
-    var productId = req.params.productId;
+    var productId = req.params.productId; // productId được truyền từ cart.routes
     var sessionId = req.signedCookies.sessionId;
 
     if(!sessionId){

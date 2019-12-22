@@ -27,7 +27,10 @@ app.set('views','./views'); // tạo thư mục views
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.use(cookieParser('dfadfasd'));
+//app.use(cookieParser('dfadfasd'));
+app.use(cookieParser(process.env.SESSION_SECRET)); // sử dụng biến SESSION_SECRET trong file .env để tạo signedCookie
+
+
 app.use(sessionMiddleware); // anh huong den tat ca duong dan duoc su dung
 
 //app.use(cookieParser(process.env.SESSION_SECRET));
@@ -55,7 +58,7 @@ app.get('/',function(req , res){
 app.use('/city',middle.requireAuth,routes);
 //app.use('/city',routes);
 app.use('/',log);
-app.use('/testnodemon',middle.requireAuth,routenodemon);
+app.use('/testnodemon',middle.requireAuth,routenodemon); // trang này để tìm kiếm 
 //app.use('/testnodemon',routenodemon);
 //trang product
 app.use('/product',productRoute);

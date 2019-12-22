@@ -7,6 +7,7 @@ var citySchema = new mongoose.Schema({
     password: String,
     avatar: String
 }); // ghi lai nhung truong co trong database 
+//muốn lưu lại hay lấy giữ liệu điều từ ở đây mà ra 
 
 var City = mongoose.model('City',citySchema,'citys') // luu vao citys o db.json
 

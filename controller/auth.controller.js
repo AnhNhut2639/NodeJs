@@ -30,8 +30,8 @@ module.exports.postLogin = function(req,res){
         });
         return;
     }
-    res.cookie('ID',user.id,{ //neu tai khoan dung thi tao tao ta 1 cookie tu chinh id cua tai khoan do
-        signed: true
+    res.cookie('ID',user.id,{ //neu tai khoan dung thi tao tao ta 1 cookie tu chinh id cua tai khoan đó // và sau khi đăng nhâp thành công thì sẽ tạo thêm 1 chuỗi để thêm vào cookie ID mà được tạo hash từ chuỗi ở dòng 30 ở index.js
+        signed: true // signed ở đây là mặc định(boolean) 
     });
     res.redirect('/testnodemon');
 };
